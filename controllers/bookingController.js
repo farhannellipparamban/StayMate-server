@@ -184,6 +184,7 @@ export const verifyBooking = async (req, res) => {
         roomDetails,
         bookingDetails,
       });
+      
     } else {
       await Bookings.deleteOne({ _id: bookingData.receipt });
       res.status(400).json({ message: "Payment failed" });
