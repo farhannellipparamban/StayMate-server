@@ -339,7 +339,7 @@ export const updateProfile = async (req, res) => {
 
 export const HomeRoomListing = async (req, res) => {
   try {
-    const roomData = await Rooms.find({ verificationStatus: "Approved" })
+    const roomData = await Rooms.find({ verificationStatus: "Approved",is_Blocked: false })
       .populate("ownerId")
       .limit(3);
     if (roomData) {
